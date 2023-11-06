@@ -14,19 +14,24 @@ function App() {
   },[])
 
   const listItems = threads.map(thread =>
-    <li key={thread.id}>
+    <li key={thread.id} className="thread-item">
       {thread.title}
     </li>
   );
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>掲示板</p>
-        <ul>
-          {listItems}
-        </ul>
+    <div className="app">
+      <header className="header">
+        <h1>掲示板</h1>
       </header>
+      <main className="contents">
+        <section>
+          <h2>新着スレッド</h2>
+          <ul className="thread-list">
+            {listItems}
+          </ul>
+        </section>
+      </main>
     </div>
   );
 }
