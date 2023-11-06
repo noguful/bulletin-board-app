@@ -23,6 +23,9 @@ function App() {
     <div className="app">
       <header className="header">
         <h1>掲示板</h1>
+        <p>
+          <a href="/">スレッドをたてる</a>
+        </p>
       </header>
       <main className="contents">
         <section>

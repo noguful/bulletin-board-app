@@ -7,6 +7,9 @@ body {
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 16px 32px;
   background-color: #66d48b;
   color: #fff;
