@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const Home = () =>{
+export const Home = () => {
 
   const [ threads, setthreads] = useState([]);
 
@@ -10,7 +10,7 @@ export const Home = () =>{
     .then(data => {
       setthreads(data)
     })
-  },[])
+  },[]);
 
   const listItems = threads.map(thread =>
     <li key={thread.id} className="thread-item">
@@ -25,5 +25,5 @@ export const Home = () =>{
         {listItems}
       </ul>
     </section>
-  )
+  );
 }
