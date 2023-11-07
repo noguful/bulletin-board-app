@@ -15,6 +15,10 @@ body {
   color: #fff;
 }
 
+.title a {
+  text-decoration: none;
+}
+
 .contents {
   width: 562px;
   margin: 0 auto;
