@@ -26,6 +26,7 @@ body {
 }
 
 .thread-list {
+  margin-top: 16px;
   padding: 0;
   border: 1px solid #565656;
   background-color: #fff;
@@ -38,4 +39,36 @@ body {
 
 .thread-item:not(:first-child) {
   border-top: 1px solid #565656;
+}
+
+.thread-new {
+  margin-top: 16px;
+  padding-top: 100px;
+}
+
+.thread-new-input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+}
+
+.thread-new-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.button {
+  padding: 4px 24px;
+  border: none;
+  background-color: #66d48b;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
 }

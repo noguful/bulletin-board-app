@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const ThreadNew = () =>{
 
   function handleClick() {
@@ -26,10 +28,17 @@ export const ThreadNew = () =>{
   return (
     <section>
       <h2>スレッド新規作成</h2>
-      <form>
-        <input type="text" name="name" />
-        <button type="button" onClick={handleClick}>作成</button>
-      </form>
+      <div className='thread-new'>
+        <form>
+          <input type="text" name="name" className='thread-new-input' placeholder='スレッドタイトル' />
+          <div className='thread-new-action'>
+            <p>
+              <Link to='/'>Topに戻る</Link>
+            </p>
+            <button type="button" className='button' onClick={handleClick}>作成</button>
+          </div>
+        </form>
+      </div>
     </section>
   );
 }
