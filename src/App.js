@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import { Home } from './routes/Home';
 import { ThreadNew } from './routes/ThreadNew';
+import { ThreadPosts } from './routes/ThreadPosts';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={ <Home /> } />
           <Route path='/thread/new' element={ <ThreadNew /> } />
+          <Route path='/thread/:threadId' element={ <ThreadPosts /> } />
         </Routes>
       </main>
     </div>
