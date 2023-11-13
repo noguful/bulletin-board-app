@@ -14,20 +14,20 @@ export const ThreadPosts = () => {
     })
   },[ threadId ]);
 
-  console.log(posts);
+  const postList = posts.posts;
 
-  // const listItems = posts.map(post =>
-  //   <li key={post.threadId} className="post-item">
-  //     {post.threadId}
-  //   </li>
-  // );
+  const listItems = postList?.map(post =>
+    <li key={post.id} className="post-item">
+      {post.post}
+    </li>
+  );
 
   return (
     <section>
       <h2>ポストタイトル</h2>
-      {/* <ul className="post-list">
+      <ul className="post-list">
         {listItems}
-      </ul> */}
+      </ul>
     </section>
   );
 }
