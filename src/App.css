@@ -60,6 +60,21 @@ body {
   margin-top: 32px;
 }
 
+.post-list {
+  margin-top: 40px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.post-item {
+  padding: 24px;
+  background-color: #fff;
+}
+
+.post-item:not(:first-child) {
+  margin-top: 24px;
+}
+
 .button {
   padding: 4px 24px;
   border: none;
