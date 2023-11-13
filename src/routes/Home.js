@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 
 export const Home = () => {
 
-  const [ threads, setthreads] = useState([]);
+  const [ threads, setThreads] = useState([]);
 
   useEffect(() => {
     fetch('https://railway.bulletinboard.techtrain.dev/threads?offset=0')
     .then(res => res.json())
     .then(data => {
-      setthreads(data)
+      setThreads(data)
     })
   },[]);
 
