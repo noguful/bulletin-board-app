@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export const Home = () => {
 
-  const [ threads, setThreads] = useState([]);
+  const [ threads, setThreads] = useState();
 
   useEffect(() => {
     fetch('https://railway.bulletinboard.techtrain.dev/threads?offset=0')
@@ -12,7 +12,7 @@ export const Home = () => {
     })
   },[]);
 
-  const listItems = threads.map(thread =>
+  const listItems = threads?.map(thread =>
     <li key={thread.id} className="thread-item">
       {thread.title}
     </li>

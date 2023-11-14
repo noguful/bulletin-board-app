@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
 
-export const ThreadNew = () =>{
+export const ThreadNew = () => {
 
-  function handleClick() {
+  const inputRef = useRef(null);
+
+  const handleClick = () => {
 
     const data = {
-      title: document.querySelector('input[name="name"]').value,
+      title: inputRef.current?.value,
     };
 
     fetch('https://railway.bulletinboard.techtrain.dev/threads', {
@@ -30,7 +33,7 @@ export const ThreadNew = () =>{
       <h2>スレッド新規作成</h2>
       <div className='thread-new'>
         <form>
-          <input type="text" name="name" className='thread-new-input' placeholder='スレッドタイトル' />
+          <input type="text" name="name" className='thread-new-input' placeholder='スレッドタイトル' ref={inputRef} />
           <div className='thread-new-action'>
             <p>
               <Link to='/'>Topに戻る</Link>

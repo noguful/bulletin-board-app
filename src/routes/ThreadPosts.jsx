@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 export const ThreadPosts = () => {
 
   const { threadId } = useParams();
-  const [ posts, setPosts] = useState({});
+  const [ posts, setPosts] = useState();
 
   useEffect(() => {
     fetch(`https://railway.bulletinboard.techtrain.dev/threads/${ threadId }/posts?offset=0`)
@@ -14,7 +14,7 @@ export const ThreadPosts = () => {
     })
   },[ threadId ]);
 
-  const postList = posts.posts;
+  const postList = posts?.posts;
 
   const listItems = postList?.map(post =>
     <li key={post.id} className="post-item">
