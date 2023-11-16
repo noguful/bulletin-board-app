@@ -61,8 +61,8 @@ export const ThreadPosts = () => {
         </ul>
         <div className='post-form'>
           <form>
-            <textarea name="name" className='' placeholder='投稿しよう！' rows='4' ref={textAreaRef} />
-            <button type="button" className='button' onClick={handleClick}>投稿</button>
+            <textarea name="name" className='post-textarea' placeholder='投稿しよう！' rows='4' ref={textAreaRef} />
+            <button type="button" className='button button-post' onClick={handleClick}>投稿</button>
           </form>
         </div>
       </div>

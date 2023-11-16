@@ -61,7 +61,7 @@ body {
 }
 
 .post-wrapper {
-  margin: 0 -100px;
+  margin: 0 -200px;
 }
 
 .post-contents {
@@ -90,6 +90,12 @@ body {
   width: 30%;
 }
 
+.post-textarea {
+  width: 100%;
+  padding: 8px;
+  border: none;
+}
+
 .button {
   padding: 4px 24px;
   border: none;
@@ -97,6 +103,11 @@ body {
   border-radius: 8px;
   color: #fff;
   cursor: pointer;
+}
+
+.button-post {
+  margin-top: 16px;
+  width: 100%;
 }
 
 .button:hover {
