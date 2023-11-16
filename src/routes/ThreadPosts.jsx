@@ -30,8 +30,15 @@ export const ThreadPosts = () => {
 
   const handleClick = () => {
 
+    const textAreaValue = textAreaRef.current?.value;
+
+    if (textAreaValue === '') {
+      console.log('空文字はNG')
+      return;
+    }
+
     const data = {
-      post: textAreaRef.current?.value,
+      post: textAreaValue,
     }
 
     fetch(`https://railway.bulletinboard.techtrain.dev/threads/ce67b37a-d805-4695-aa06-39c2cd62e560/posts`, {
