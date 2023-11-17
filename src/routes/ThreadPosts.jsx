@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 
 export const ThreadPosts = () => {
@@ -6,17 +6,17 @@ export const ThreadPosts = () => {
   const { threadId } = useParams();
   const [ posts, setPosts] = useState();
 
-  const fetchData = () => {
+  const fetchData = useCallback(() => {
     fetch(`https://railway.bulletinboard.techtrain.dev/threads/${ threadId }/posts?offset=0`)
     .then(res => res.json())
     .then(data => {
       setPosts(data)
-    })
-  }
+    });
+  }, [ threadId ]);
 
   useEffect(() => {
     fetchData();
-  },[ threadId ]);
+  },[ fetchData ]);
 
   const postList = posts?.posts;
 
@@ -30,10 +30,10 @@ export const ThreadPosts = () => {
 
   const handleClick = () => {
 
-    const textAreaValue = textAreaRef.current?.value;
+    const textAreaValue = textAreaRef.current?.value.trim();
 
-    if (textAreaValue === '') {
-      console.log('空文字はNG')
+    if (!textAreaValue) {
+      console.log('空文字NG')
       return;
     }
 
@@ -41,7 +41,7 @@ export const ThreadPosts = () => {
       post: textAreaValue,
     }
 
-    fetch(`https://railway.bulletinboard.techtrain.dev/threads/ce67b37a-d805-4695-aa06-39c2cd62e560/posts`, {
+    fetch(`https://railway.bulletinboard.techtrain.dev/threads/${ threadId }/posts`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -52,6 +52,7 @@ export const ThreadPosts = () => {
     .then((res) => res.json())
     .then((data) => {
       console.log('Success:', data);
+      textAreaRef.current.value = null;
       fetchData();
     })
     .catch((error) => {
